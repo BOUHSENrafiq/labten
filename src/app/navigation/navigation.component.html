@@ -1,0 +1,21 @@
+<header class="container-fluid">
+  <nav class="row">
+    <div id="menu" class="col-1">
+      <p [matMenuTriggerFor]="appMenu">&#9776;</p>
+      <mat-menu #appMenu="matMenu">
+        <a mat-menu-item href="#Listedesetudiants" id="listedesetudiants">Liste des étudiants</a>
+        <a mat-menu-item href="#Monprofil" id="monprofil">Mon profil</a>
+        <a mat-menu-item href="#Quitter" id="quitter">Quitter</a>
+      </mat-menu>
+    </div>
+    <div id="a" class="col-4">
+      <a id="f" [routerLink]="['discussion']" routerLinkActive="active">Discussion</a>
+    </div>
+    <div id="b" class="col-4">
+      <a id="g" [routerLink]="['discussion']" routerLinkActive="active">Traveaux et devoirs</a>
+    </div>
+    <div id="c" class="col-3">
+      <a id="h" [routerLink]="['participant/list']" routerLinkActive="active">Participants</a>
+    </div>
+  </nav>
+</header>
