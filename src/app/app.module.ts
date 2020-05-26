@@ -15,6 +15,9 @@ import {HttpClientModule} from '@angular/common/http';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {AddProfilComponent} from './add-profil/add-profil.component';
+import {EditProfilComponent} from './edit-profil/edit-profil.component';
+import {ProfilComponent} from './profil/profil.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
     NavigationComponent,
     AddComponent,
     EditComponent,
-    ListComponent
+    ListComponent,
+    AddProfilComponent,
+    EditProfilComponent,
+    ProfilComponent
   ],
   imports: [
     BrowserModule,

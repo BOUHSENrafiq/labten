@@ -4,7 +4,7 @@
       "id": 1,
       "name": "BOUHSEN",
       "firstName": "RAFIQ",
-      "age": 31,
+      "age": "32",
       "email": "R@caramail.com",
       "phoneNumber": "0613747944"
     },
@@ -15,6 +15,43 @@
       "email": "zdfgh@dfghj.vf",
       "phoneNumber": "2345678",
       "id": 2
+    },
+    {
+      "name": "AZERTY",
+      "firstName": "ZERTYU",
+      "age": "54",
+      "email": "rafiq@gmail.com",
+      "phoneNumber": "2345678906",
+      "id": 3
+    }
+  ],
+  "teachers": [
+    {
+      "name": "rafuiq",
+      "firstName": "dfghjkl",
+      "age": "34",
+      "email": "raf@gmail.com",
+      "phoneNumber": "0611324578",
+      "subject": "PHYSICS",
+      "id": 3
+    },
+    {
+      "name": "made",
+      "firstName": "node",
+      "age": "46",
+      "email": "1@gmail.com",
+      "phoneNumber": "1234567890",
+      "subject": "JAVA",
+      "id": 4
+    },
+    {
+      "name": "said",
+      "firstName": "siham",
+      "age": "45",
+      "email": "njk@caramail.com",
+      "phoneNumber": "0974422457",
+      "subject": "IT",
+      "id": 5
     }
   ]
 }

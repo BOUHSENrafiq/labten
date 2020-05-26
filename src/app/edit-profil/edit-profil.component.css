@@ -1,0 +1,52 @@
+*{
+  font-family: "Times New Roman";
+}
+form{
+  position:fixed;
+  top: 50%;
+  left: 50%;
+  width:30rem;
+  height:auto;
+  margin-top: -15rem; /*set to a negative number 1/2 of your height*/
+  margin-left: -15em; /*set to a negative number 1/2 of your width*/
+  border: 1px solid beige;
+  background-color: beige;
+}
+button {
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#submit{
+  margin-left: 13rem;
+}
+#reset{
+  margin-left: 2rem;
+  color: black;
+  background-color: #7676ea;
+}
+#cancel{
+  margin-left: 2rem;
+  color: black;
+  background-color: #7676ea;
+}
+#submit:enabled {
+  background-color: green;
+  color: black;
+  cursor: pointer;
+}
+
+#submit:disabled {
+  background-color: red;
+  color: black;
+  cursor: pointer;
+}
+
+input {
+  height: 2rem;
+  font-size: 2em;
+  padding-left: 0em;
+}
