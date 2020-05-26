@@ -1,0 +1,35 @@
+<form [formGroup]="formulaire" method="POST">
+  <mat-form-field>
+    <input [(ngModel)]="teachers.name" type="text" matInput placeholder="Name" formControlName="name">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input [(ngModel)]="teachers.firstName" type="text" matInput placeholder="First name" formControlName="firstName">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input [(ngModel)]="teachers.age"  matInput placeholder="Age" formControlName="age" minlength="2" maxlength="3">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input [(ngModel)]="teachers.email" type="email" matInput placeholder="E-mail" [formControl]="email" formControlName="email">
+  </mat-form-field>
+  <mat-error *ngIf="email.invalid">
+    {{getErrorMessage()}}
+  </mat-error>
+  <br>
+  <mat-form-field>
+    <input [(ngModel)]="teachers.phoneNumber" type="tel" matInput placeholder="Phone number" formControlName="phoneNumber" minlength="10">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input [(ngModel)]="teachers.subject" type="text" matInput placeholder="Subject" formControlName="subject">
+  </mat-form-field>
+  <br>
+  <button id="submit" mat-raised-button [disabled]="formulaire.invalid" color="primary" (click)="onSubmit()" >Update</button>
+  <button id="reset" mat-raised-button  color="primary" (click)="formulaire.reset()">Reset</button>
+  <button id="cancel" mat-raised-button  color="primary" (click)="activeModal.dismiss('Cross click')">Cancel</button>
+</form>
+
+
+

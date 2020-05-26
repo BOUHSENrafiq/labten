@@ -3,8 +3,8 @@
     <div id="menu" class="col-1">
       <p [matMenuTriggerFor]="appMenu">&#9776;</p>
       <mat-menu #appMenu="matMenu">
-        <a mat-menu-item href="#Listedesetudiants" id="listedesetudiants">Liste des étudiants</a>
-        <a mat-menu-item href="#Monprofil" id="monprofil">Mon profil</a>
+        <a mat-menu-item [routerLink]="['participants/list']" routerLinkActive="active">Liste des étudiants</a>
+        <a mat-menu-item [routerLink]="['teachers/list']" routerLinkActive="active">Mon profil</a>
         <a mat-menu-item href="#Quitter" id="quitter">Quitter</a>
       </mat-menu>
     </div>

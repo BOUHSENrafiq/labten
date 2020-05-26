@@ -1,0 +1,36 @@
+<div>
+  <fa-icon (click)="openFormAddTeachers()" [icon]="addSymbol"></fa-icon>
+  <table>
+    <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">E-mail</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Subject</th>
+      <th scope="col">Update</th>
+      <th scope="col">Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let teacher of teachers; index as i">
+      <th scope="row">{{ teacher.id }}</th>
+      <td id="name">{{ teacher.name }}</td>
+      <td id="firstName">{{ teacher.firstName }}</td>
+      <td id="age">{{teacher.age }}</td>
+      <td id="email">{{ teacher.email }}</td>
+      <td id="phone">{{ teacher.phoneNumber }}</td>
+      <td id="subject">{{ teacher.subject }}</td>
+      <td style="text-align: center">
+        <fa-icon id="edit"  (click)="editTeacher(teacher.id)" [icon]="editSymbol"></fa-icon>
+      </td>
+      <td style="text-align: center">
+        <fa-icon id="delete" (click)="deleteTeacher(teacher.id)" [icon]="deleteSymbol"></fa-icon>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
