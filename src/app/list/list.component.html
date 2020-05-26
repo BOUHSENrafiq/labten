@@ -1,0 +1,33 @@
+<div>
+    <fa-icon (click)="openFormAddParticipant()" [icon]="faplus"></fa-icon>
+  <table>
+    <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">E-mail</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Update</th>
+      <th scope="col">Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let participant of participants; index as i">
+      <th scope="row">{{ participant.id }}</th>
+      <td id="name">{{ participant.name }}</td>
+      <td id="firstName">{{ participant.firstName }}</td>
+      <td id="age">{{ participant.age }}</td>
+      <td id="email">{{ participant.email }}</td>
+      <td id="phone">{{ participant.phoneNumber }}</td>
+      <td style="text-align: center">
+        <fa-icon id="edit"  (click)="editParticipant(participant.id)" [icon]="famodifier"></fa-icon>
+      </td>
+      <td style="text-align: center">
+        <fa-icon id="delete" (click)="deleteParticipants(participant.id)" [icon]="famoins"></fa-icon>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
