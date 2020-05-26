@@ -1,6 +1,6 @@
 #div{
   position:fixed;
-  top: 50%;
+  top: 30%;
   left: 50%;
   width:auto;
   height:auto;
@@ -23,4 +23,6 @@ button{
 }
 p{
   font-size: 18px;
+  text-align: justify;
+  margin-right: 20rem;
 }
