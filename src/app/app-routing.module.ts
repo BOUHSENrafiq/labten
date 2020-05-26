@@ -3,10 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 // import components
-import { ListComponent } from '.list/list.component';
+import { ListComponent} from './list/list.component';
 
 const routes: Routes = [
-  { path: 'participant/list', component: ListComponent }
+  { path: 'participants/list', component: ListComponent }
 ];
 
 @NgModule({

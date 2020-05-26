@@ -1,0 +1,47 @@
+*{
+  font-family: "Times New Roman";
+  font-size: 1rem;
+  color: black;
+}
+div{
+  position:fixed;
+  top: 50%;
+  left: 50%;
+  width:auto;
+  height:auto;
+  margin-top: -9em; /*set to a negative number 1/2 of your height*/
+  margin-left: -15em; /*set to a negative number 1/2 of your width*/
+}
+th{
+  background-color: #ababf3;
+  border: 1px solid black;
+  text-align: center;
+}
+td{
+  background-color: #fcfccc;
+  border: 1px solid black;
+  text-align: left;
+}
+#age,#phone{
+  text-align: center;
+}
+
+tbody{
+  text-align: center;
+}
+fa-icon{
+  color: #2366e0;
+  font-size: 20px;
+  cursor: pointer;
+}
+#delete{
+  color: red;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#edit{
+  color: #6b991e;
+  font-size: 20px;
+  cursor: pointer;
+}
