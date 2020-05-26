@@ -53,5 +53,13 @@
       "subject": "IT",
       "id": 5
     }
+  ],
+  "assignments": [
+    {
+      "titre": "rafiq",
+      "description": "ana lmaghboun",
+      "url": "https://www.youtube.com/watch?v=xSDIKariIWQ",
+      "id": 1
+    }
   ]
 }

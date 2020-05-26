@@ -1,0 +1,18 @@
+<div id="div" class="container-fluid" *ngFor="let assignment of assignments">
+  <fa-icon id="add" (click)="showModalAddAssignments()" [icon]="addLinkSymbol"></fa-icon>
+  <div class="row">
+    <h1>Title: {{assignment.titre}}</h1>
+  </div>
+  <div class="row">
+    <p class="card-text">Description: {{assignment.description}}</p>
+  </div>
+  <div>
+      <iframe width="560" height="315" [src]="getUrl(assignment.url) | safeUrl" frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+  </div>
+  <div>
+    <fa-icon id="delete" (click)="deleteAssignments(assignment.id)" [icon]="deleteLinkSymbol"></fa-icon>
+    <button (click)="showModalEditAssignments(assignment.id)">Edit</button>
+  </div>
+</div>
