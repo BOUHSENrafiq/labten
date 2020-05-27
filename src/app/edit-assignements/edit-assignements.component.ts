@@ -9,8 +9,17 @@ import Assignments from '../../models/assignments';
   templateUrl: './edit-assignements.component.html',
   styleUrls: ['./edit-assignements.component.css']
 })
+/**
+ * @class [export EditAssignementsComponent]
+ */
 export class EditAssignementsComponent implements OnInit {
   public assignments: Assignments;
+
+  /**
+   * @constructors [constructor]
+   * @param {AssignmentsService} assignmentsService
+   * @param {NgbActiveModal} activeModal
+   */
   constructor(
     private assignmentsService: AssignmentsService,
     public activeModal: NgbActiveModal) { }
@@ -18,6 +27,11 @@ export class EditAssignementsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Update/Edit assignments
+   * @method [submit]
+   * @param {NgForm} form
+   */
   submit(form: NgForm){
     console.log('before server request', JSON.stringify(this.assignments));
     this.assignmentsService.updateAssignment(this.assignments).subscribe((assignments: Assignments) => {

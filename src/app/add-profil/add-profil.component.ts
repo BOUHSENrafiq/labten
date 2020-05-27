@@ -8,34 +8,60 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './add-profil.component.html',
   styleUrls: ['./add-profil.component.css']
 })
+/**
+ * @class [export AddProfilComponent]
+ */
 export class AddProfilComponent implements OnInit {
 
   teachers: Teachers;
   public formulaire: FormGroup;
 
-  constructor(public activeModal: NgbActiveModal, private form: FormBuilder, private teachersService: TeachersService) {
+  /**
+   * injectable services
+   * @param {NgbActiveModal} activeModal
+   * @param {FormBuilder} form
+   * @param {TeachersService} teachersService
+   */
+  constructor(public activeModal: NgbActiveModal,
+              private form: FormBuilder,
+              private teachersService: TeachersService) {
   }
 
+  /**
+   * @property email
+   */
   email = new FormControl('', [Validators.required, Validators.email]);
 
+  /**
+   * @method [ngOnInit]
+   */
   ngOnInit(): void {
     this.teachers = new Teachers();
     this.formulaire = this.form.group({
-      name: ['', [Validators.required]],
-      firstName: ['', [Validators.required]],
-      age: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]],
-      phoneNumber: ['', [Validators.required]],
-      subject: ['', [Validators.required]],
+      name: ['', [Validators.required]], // make the name a required area
+      firstName: ['', [Validators.required]], // make the firstName a required area
+      age: ['', [Validators.required]], // make the age a required area
+      email: ['', [Validators.required, Validators.email]], // make the email a required area with email validators (syntax...)
+      phoneNumber: ['', [Validators.required]], // make the phoneNumber a required area
+      subject: ['', [Validators.required]], // make the suject a required area
     });
   }
 
+  /**
+   * Add new teacher
+   *  @method [onSubmit]
+   */
   onSubmit() {
     console.log('before server request', JSON.stringify(this.teachers));
     this.teachersService.addTeacher(this.teachers).subscribe((teachers: Teachers) => {
       this.activeModal.close(teachers);
     });
   }
+  /**
+   * Generate a message that show to user that the email field is an obligatory field to fill in
+   * Generate an error message if the email doesn't match an email syntax
+   * @method [getErrorMessage]
+   */
   getErrorMessage() {
     if (this.email.hasError('required')) {
       return 'You must enter a value';

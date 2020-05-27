@@ -11,15 +11,32 @@ import { faLink, faUnlink} from '@fortawesome/free-solid-svg-icons';
   templateUrl: './assignements.component.html',
   styleUrls: ['./assignements.component.css']
 })
+/**
+ * @class [export AssignementsComponent]
+ */
 export class AssignementsComponent implements OnInit {
-  addLinkSymbol = faLink;
-  deleteLinkSymbol = faUnlink;
+  /**
+   * @property addLinkSymbol
+   * @property deleteAssignments
+   */
+  addLinkSymbol = faLink; // symbol of add
+  deleteLinkSymbol = faUnlink; // symbol of delete
 
   assignments: Assignments[];
+
+  /**
+   * injectable services
+   * @param {AssignmentsService} assignmentsService
+   * @param {NgbModal} modalService
+   */
   constructor(
     private assignmentsService: AssignmentsService,
     private modalService: NgbModal) { }
 
+  /**
+   * Show the modal AssignementsComponent
+   * @method [showModalAddAssignments]
+   */
   showModalAddAssignments() {
     const modalRef = this.modalService.open(AddAssignementsComponent);
     modalRef.result.then( Devoir => {
@@ -27,12 +44,22 @@ export class AssignementsComponent implements OnInit {
     });
   }
 
+  /**
+   * Delete an assignment
+   * @method [deleteAssignments]
+   * @param {number} id
+   */
   deleteAssignments(id: number){
     this.assignmentsService.deleteAssignments(id).subscribe(() => {
       console.log('assignments with this id', id, 'is deleted');
     });
   }
 
+  /**
+   * Show the modal EditAssignementsComponent
+   * @method [showModalEditAssignments]
+   * @param {number} id
+   */
   showModalEditAssignments(id: number){
     console.log('edit assignment id: ', id);
     const assignments = this.assignments.find((part) => part.id === id);
@@ -41,20 +68,28 @@ export class AssignementsComponent implements OnInit {
       console.log('can\'t find assignment with this id ', id);
       return;
     }
-
     const modalRef = this.modalService.open(EditAssignementsComponent);
     modalRef.componentInstance.assignments = assignments;
     modalRef.result.then( assignment => {
-      console.log('result edit module', assignments);
+      console.log('result: ', assignments);
     });
   }
-// generate Youtube Embedded Url
+
+  /**
+   * generate a Youtube Embedded url
+   * @method [getUrl]
+   * @param {string} url
+   */
   getUrl(url: string): string {
     let videoUrl = url.split('=')[1];
     videoUrl = 'https://www.youtube.com/embed/' + videoUrl;
     return videoUrl;
   }
 
+  /**
+   * Show a list of assignments
+   * @method [ngOnInit]
+   */
   ngOnInit(): void {
     this.assignmentsService.getAssignments().subscribe((assignments: Assignments[]) => {
       this.assignments = assignments;

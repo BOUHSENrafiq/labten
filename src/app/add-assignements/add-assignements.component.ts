@@ -9,8 +9,17 @@ import Assignments from '../../models/assignments';
   templateUrl: './add-assignements.component.html',
   styleUrls: ['./add-assignements.component.css']
 })
+/**
+ * @class [export AddAssignementsComponent]
+ */
 export class AddAssignementsComponent implements OnInit {
   assignments: any;
+
+  /**
+   * @constructor
+   * @param {AssignmentsService} assignmentsService
+   * @param {NgbActiveModal} activeModal
+   */
   constructor(
     private assignmentsService: AssignmentsService,
     public activeModal: NgbActiveModal) { }
@@ -20,6 +29,7 @@ export class AddAssignementsComponent implements OnInit {
   }
   /**
    * submit and add a new assignment
+   * @method [submit]
    * @param form
    */
   submit(form: NgForm) {
@@ -28,5 +38,4 @@ export class AddAssignementsComponent implements OnInit {
       this.activeModal.close(assignments);
     });
   }
-
 }

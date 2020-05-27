@@ -12,10 +12,14 @@ import {EditProfilComponent} from '../edit-profil/edit-profil.component';
   styleUrls: ['./profil.component.css']
 })
 export class ProfilComponent implements OnInit {
-// Symbols:
-  addSymbol = faUserPlus; // add user symbol
-  deleteSymbol = faUserMinus; // delete user symbol
-  editSymbol = faUserEdit; // edit user symbol
+  /**
+   * @property addSymbol
+   * @property deleteSymbol
+   * @property editSymbol
+   */
+  addSymbol = faUserPlus; // icon add user
+  deleteSymbol = faUserMinus; // icon delete user
+  editSymbol = faUserEdit; // icon edit user
 
   teachers: Teachers[];
 
@@ -24,6 +28,7 @@ export class ProfilComponent implements OnInit {
 
   /**
    *  to bring the model view of addProfilComponent
+   *  @method [openFormAddTeachers]
    */
   openFormAddTeachers() {
     const modalRef = this.modalService.open(AddProfilComponent);
@@ -33,7 +38,8 @@ export class ProfilComponent implements OnInit {
   }
 
   /**
-   * Bing the list of teachers and show it
+   * Callback: Bing the list of teachers and show it
+   * @method [ngOnInit]
    */
   ngOnInit(): void {
     this.teachersService.getListOfTeachers().subscribe((teachers: Teachers[]) => {
@@ -44,6 +50,7 @@ export class ProfilComponent implements OnInit {
 
   /**
    * Delete a teacher with this specific id
+   * @method [deleteTeacher]
    * @param id
    */
   deleteTeacher(id: number){
@@ -53,22 +60,21 @@ export class ProfilComponent implements OnInit {
   }
 
   /**
-   * Show the model view of EditProfilComponent, open form edit-profil
-   * and
-   * Update infos about a teacher who has this specific id
+   * Show the model view of EditProfilComponent
+   * @method [editTeacher]
    * @param id
    */
   editTeacher(id: number) {
     const teacher = this.teachers.find((part) => part.id === id);
     console.log('update teacher: ', JSON.stringify(teacher));
     if (teacher === undefined) {
-      console.log('there is no participant with this', id);
+      console.log('There is no participant with this', id);
       return;
     }
     const modalRef = this.modalService.open(EditProfilComponent);
     modalRef.componentInstance.teachers = teacher;
-    modalRef.result.then(participant => {
-      console.log('result of module', teacher);
+    modalRef.result.then(teacheeer => {
+      console.log('result: ', teacher);
     });
   }
 }
