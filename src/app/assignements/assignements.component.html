@@ -7,12 +7,13 @@
     <p class="card-text">Description: {{assignment.description}}</p>
   </div>
   <div>
-      <iframe width="560" height="315" [src]="getUrl(assignment.url) | safeUrl" frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
+    <iframe width="560" height="315" [src]="getUrl(assignment.url) | safeUrl" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
   </div>
   <div>
     <fa-icon id="delete" (click)="deleteAssignments(assignment.id)" [icon]="deleteLinkSymbol"></fa-icon>
     <button (click)="showModalEditAssignments(assignment.id)">Edit</button>
   </div>
 </div>
+
