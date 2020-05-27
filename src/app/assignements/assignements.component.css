@@ -1,0 +1,28 @@
+#div{
+  position:fixed;
+  top: 30%;
+  left: 50%;
+  width:auto;
+  height:auto;
+  margin-top: -9em; /*set to a negative number 1/2 of your height*/
+  margin-left: -15em; /*set to a negative number 1/2 of your width*/
+}
+#delete{
+  color: red;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#add{
+  color: #2366e0;
+  font-size: 20px;
+  cursor: pointer;
+}
+button{
+  margin-left: 2rem;
+}
+p{
+  font-size: 18px;
+  text-align: justify;
+  margin-right: 20rem;
+}

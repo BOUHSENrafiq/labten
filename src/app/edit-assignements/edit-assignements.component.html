@@ -1,0 +1,22 @@
+<form novalidate #form="ngForm" (ngSubmit)="submit(form)">
+  <div class="modal-body">
+    <div class="form-group">
+      <label>Title</label>
+      <input type="text" class="form-control" name="titre" [(ngModel)]="assignments.titre" placeholder="titre" required>
+    </div>
+    <div class="form-group">
+      <label>Description</label>
+      <input type="text" class="form-control" name="description" [(ngModel)]="assignments.description" placeholder="Description"
+             required>
+    </div>
+    <div class="form-group">
+      <label>Youtube Video</label>
+      <input type="text" class="form-control" name="ytburl" [(ngModel)]="assignments.url" placeholder="Youtube Video"
+             required>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button id="submit" mat-raised-button color="primary" [disabled]="form.invalid">Submit</button>
+    <button id="cancel" mat-raised-button  color="primary" (click)="activeModal.dismiss('Cross click')">Cancel</button>
+  </div>
+</form>

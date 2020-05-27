@@ -1,3 +1,6 @@
+/**
+ * @class [export default Teachers]
+ */
 export default class Teachers {
   id: number;
   name: string;

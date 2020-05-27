@@ -1,10 +1,8 @@
 /**
  * By BOUHSEN RAFIQ
  * project: LAB 10
- * model: teachers.
  * service for CRUD operations.
  */
-
 
 import { Injectable } from '@angular/core';
 import Teachers from '../models/teachers';
@@ -15,19 +13,26 @@ const url = 'http://localhost:3000/teachers'; // json-server url
 @Injectable({
   providedIn: 'root'
 })
+
 export class TeachersService {
+  /**
+   * @constructor
+   * @param {HttpClient} http
+   */
   constructor(private http: HttpClient) { }
 
   /**
    * Get a list of all the teachers
+   * @method [getListOfTeachers]
    */
   getListOfTeachers(): Observable<Teachers[]>{
     return this.http.get<Teachers[]>(url);
   }
 
   /**
-   * delete teacher with this id
-   * @param id
+   * delete a teacher with this id
+   * @method [deleteTeacher]
+   * @param {number} id
    */
   deleteTeacher(id: number): Observable<any>{
     return this.http.delete(url + '/' + id);
@@ -35,7 +40,8 @@ export class TeachersService {
 
   /**
    * add a new teacher of type Teachers
-   * @param teachers
+   * @method [addTeacher]
+   * @param {Teachers} teachers
    */
   addTeacher(teachers: Teachers): Observable<Teachers>{
     const headers = new HttpHeaders();
@@ -44,12 +50,12 @@ export class TeachersService {
   }
 
   /**
-   * Edit information about a teacher and save the new values
-   * @param teachers
+   * Update/Edit information about a teacher and save the new values
+   * @method [updateTeacher]
+   * @param {Teachers} teachers
    */
   updateTeacher(teachers: Teachers): Observable<Teachers>{
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http
-      .put<Teachers>(url + '/' + teachers.id, teachers, {headers: headers});
+    return this.http.put<Teachers>(url + '/' + teachers.id, teachers, {headers: headers});
   }
 }

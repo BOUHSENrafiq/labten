@@ -9,12 +9,21 @@ import Teachers from '../../models/teachers';
   templateUrl: './edit-profil.component.html',
   styleUrls: ['./edit-profil.component.css']
 })
+/**
+ * @class [export EditProfilComponent]
+ */
 export class EditProfilComponent implements OnInit {
   public teachers: Teachers;
   public formulaire: FormGroup;
 
   email = new FormControl('', [Validators.required, Validators.email]);
 
+  /**
+   * @constructor
+   * @param {TeachersService} teachersService
+   * @param {NgbActiveModal} activeModal
+   * @param {FormBuilder} form
+   */
   constructor(private teachersService: TeachersService,
               public activeModal: NgbActiveModal,
               private form: FormBuilder,
@@ -31,13 +40,21 @@ export class EditProfilComponent implements OnInit {
     });
   }
 
+  /**
+   * Update/Edit teachers profile
+   * @method [onSubmit]
+   */
   onSubmit() {
     console.log('before server request', JSON.stringify(this.teachers));
     this.teachersService.updateTeacher(this.teachers).subscribe((teachers: Teachers) => {
       this.activeModal.close(teachers);
     });
   }
-
+  /**
+   * Generate a message that show to user that the email field is an obligatory field to fill in
+   * Generate an error message if the email doesn't match an email syntax
+   * @method [getErrorMessage]
+   */
   getErrorMessage() {
     if (this.email.hasError('required')) {
       return 'You must enter a value';

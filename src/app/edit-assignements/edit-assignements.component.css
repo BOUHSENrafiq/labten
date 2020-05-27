@@ -1,0 +1,29 @@
+*{
+  font-family: "Times New Roman";
+}
+form{
+  position:fixed;
+  top: 50%;
+  left: 50%;
+  width:30rem;
+  height:auto;
+  margin-top: -15rem; /*set to a negative number 1/2 of your height*/
+  margin-left: -15em; /*set to a negative number 1/2 of your width*/
+  border: 1px solid beige;
+  background-color: beige;
+}
+#cancel{
+  margin-left: 1rem;
+  background-color: red;
+}
+
+#submit:enabled {
+  background-color: green;
+  color: black;
+  cursor: pointer;
+}
+#submit:disabled {
+  background-color: red;
+  color: black;
+  cursor: pointer;
+}
